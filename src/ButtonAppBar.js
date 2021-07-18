@@ -6,6 +6,8 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import Image from 'next/image'
+import bessppl from '../public/bessppl.png'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -30,7 +32,7 @@ export default function ButtonAppBar() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-          <img src="/bessppl.png" alt="Teraret Logo" width={108} />
+          <Image src={bessppl} alt="Bessppl" width={108} height={16} />
           </Typography>
           <Button color="inherit">Registration</Button>
           <Button color="inherit">Login</Button>
