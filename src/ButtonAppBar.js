@@ -30,8 +30,9 @@ export default function ButtonAppBar() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            News
+          <img src="/bessppl.png" alt="Teraret Logo" width={108} />
           </Typography>
+          <Button color="inherit">Registration</Button>
           <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
