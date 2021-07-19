@@ -7,7 +7,7 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Image from 'next/image'
-import bessppl from '../public/inverse.png'
+
 import Link from "next/link";
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,9 +32,9 @@ export default function ButtonAppBar() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-          <Link href="/">
-          <Image src={bessppl} alt="Bessppl" width={108} height={16} />
-          </Link>
+          <a href="/">
+          <img src="/inverse.png" alt="Bessppl" width={108} height={16} />
+          </a>
           </Typography>
           <Button color="inherit">Registration</Button>
           <Button  variant="outlined" color="secondary">Login</Button>
