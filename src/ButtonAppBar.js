@@ -36,7 +36,8 @@ export default function ButtonAppBar() {
           <img src="/inverse.png" alt="Bessppl" width={108} height={16} />
           </a>
           </Typography>
-          <Button color="inherit">Registration</Button>
+          <Button color="inherit">Become a Mentor</Button>
+          <Button color="inherit">Become a Student</Button>
           <Button  variant="outlined" color="secondary">Login</Button>
         </Toolbar>
       </AppBar>
