@@ -1,8 +1,20 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import EnhancedTable from '../src/EnhancedTable'
+import BasicTable from '../src/EnhancedTable'
 
-export default function Home() {
+const url = 'http://us-bessppl.us-west-2.elasticbeanstalk.com/events'
+
+export async function getServerSideProps() {
+  const res = await fetch(url)
+  const data = await res.json()
+  return {
+    props: { data }
+  }
+}
+
+export default function Home({data}) {
+
+  console.log("Data",data)
   return (
     <div>
       <Head>
@@ -14,7 +26,7 @@ export default function Home() {
         <h1>
         High Performance Software Engineering Training and Super Efficient Team Building 
         </h1>
-        <EnhancedTable />
+        <BasicTable data={data} />
       </main>
     </div>
   )
