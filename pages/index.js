@@ -13,8 +13,6 @@ export async function getServerSideProps() {
 }
 
 export default function Home({data}) {
-
-  console.log("Data",data)
   return (
     <div>
       <Head>
