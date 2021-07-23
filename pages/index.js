@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import BasicTable from '../src/EnhancedTable'
 
-const url = 'http://us-bessppl.us-west-2.elasticbeanstalk.com/events'
+const url = 'http://us-api.bessppl.com/events'
 
 export async function getServerSideProps() {
   const res = await fetch(url)
