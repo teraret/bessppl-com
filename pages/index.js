@@ -1,18 +1,7 @@
 import Head from 'next/head'
-//import Image from 'next/image'
-//import BasicTable from '../src/EnhancedTable'
+import BasicTable from '../src/EnhancedTable'
 
-// const url = 'http://us-api.bessppl.com/events'
-
-// export async function getServerSideProps() {
-//   const res = await fetch(url)
-//   const data = await res.json()
-//   return {
-//     props: { data }
-//   }
-// }
-
-export default function Home({data}) {
+function Home({data}) {
   return (
     <div>
       <Head>
@@ -24,8 +13,18 @@ export default function Home({data}) {
         <h1>
         High Performance Software Engineering Training and Super Efficient Team Building 
         </h1>
-        {/* <BasicTable data={data} /> */}
+        <BasicTable data={data} />
       </main>
     </div>
   )
 }
+
+Home.getInitialProps = async (ctx) => {
+  const res = await fetch('http://us-api.bessppl.com/events')
+  const json = await res.json()
+  return { data: json }
+}
+
+
+
+export default Home;
