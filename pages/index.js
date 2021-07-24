@@ -13,30 +13,31 @@ function Home({data}) {
         <h1>
         High Performance Software Engineering Training and Super Efficient Team Building 
         </h1>
-        <BasicTable data={data} />
+        {JSON.stringify(data)}
+        {/* <BasicTable data={data} /> */}
       </main>
     </div>
   )
 }
-export async function getServerSideProps() {
-  const res = await fetch(`https://us-api.bessppl.com/events`)
-  const data = await res.json()
-
-  // if (!data) {
-  //   return {
-  //     notFound: true,
-  //   }
-  // }
-
-  return {
-    props: {data}, 
-  }
-
-}
-
-// Home.getInitialProps = async (ctx) => {
-//   const res = await fetch('https://us-api.bessppl.com/events')
+// export async function getServerSideProps() {
+//   const res = await fetch(`https://us-api.bessppl.com/events`)
 //   const data = await res.json()
-//   return { data }
+
+//   if (!data) {
+//     return {
+//       notFound: true,
+//     }
+//   }
+
+//   return {
+//     props: {}, 
+//   }
+
 // }
+
+Home.getInitialProps = async (ctx) => {
+  const res = await fetch('https://us-api.bessppl.com/events')
+  const data = await res.json()
+  return { data }
+}
 export default Home;
