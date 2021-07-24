@@ -24,7 +24,4 @@ Home.getInitialProps = async (ctx) => {
   const json = await res.json()
   return { data: json }
 }
-
-
-
 export default Home;
