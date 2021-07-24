@@ -1,16 +1,16 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import BasicTable from '../src/EnhancedTable'
+//import Image from 'next/image'
+//import BasicTable from '../src/EnhancedTable'
 
-const url = 'http://us-api.bessppl.com/events'
+// const url = 'http://us-api.bessppl.com/events'
 
-export async function getServerSideProps() {
-  const res = await fetch(url)
-  const data = await res.json()
-  return {
-    props: { data }
-  }
-}
+// export async function getServerSideProps() {
+//   const res = await fetch(url)
+//   const data = await res.json()
+//   return {
+//     props: { data }
+//   }
+// }
 
 export default function Home({data}) {
   return (
@@ -24,7 +24,7 @@ export default function Home({data}) {
         <h1>
         High Performance Software Engineering Training and Super Efficient Team Building 
         </h1>
-        <BasicTable data={data} />
+        {/* <BasicTable data={data} /> */}
       </main>
     </div>
   )
