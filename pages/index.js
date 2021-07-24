@@ -20,7 +20,7 @@ function Home({data}) {
 }
 
 Home.getInitialProps = async (ctx) => {
-  const res = await fetch('http://us-api.bessppl.com/events')
+  const res = await fetch('https://us-api.bessppl.com/events')
   const json = await res.json()
   return { data: json }
 }
