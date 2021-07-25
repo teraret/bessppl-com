@@ -13,9 +13,16 @@ function Home({data}) {
         <h1>
         High Performance Software Engineering Training and Super Efficient Team Building 
         </h1>
+        <BasicTable data={data} />
       </main>
     </div>
   )
+}
+
+Home.getInitialProps = async (ctx) => {
+  const res = await fetch('https://app.bessppl.com/events')
+  const data = await res.json()
+  return { data }
 }
 
 export default Home;
