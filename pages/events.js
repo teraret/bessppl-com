@@ -35,9 +35,9 @@ function events({data}) {
 
 // }
 
-events.getInitialProps = async (ctx) => {
-  const res = await fetch('https://app.bessppl.com/events')
-  const data = await res.json()
-  return { data }
-}
+// events.getInitialProps = async (ctx) => {
+//   const res = await fetch('https://app.bessppl.com/events')
+//   const data = await res.json()
+//   return { data }
+// }
 export default events;
