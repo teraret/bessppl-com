@@ -1,7 +1,21 @@
 import Head from 'next/head'
 import BasicTable from '../src/EnhancedTable'
+import { useState ,useEffect} from 'react'
+import { DataStore } from '@aws-amplify/datastore'
+import {Event} from './../models'
 
 function Home({data}) {
+  const [events, setEvents] = useState([]);
+  useEffect(() => {
+    fetchEvents()   
+    async function fetchEvents (){
+      const evensData = await DataStore.query(Event);
+     setEvents(evensData)
+    }
+  }, [])
+
+
+
   return (
     <div>
       <Head>
@@ -13,16 +27,16 @@ function Home({data}) {
         <h1>
         High Performance Software Engineering Training and Super Efficient Team Building 
         </h1>
-        <BasicTable data={data} />
+        <BasicTable data={events} />
       </main>
     </div>
   )
 }
 
-Home.getInitialProps = async (ctx) => {
-  const res = await fetch('https://app.bessppl.com/events')
-  const data = await res.json()
-  return { data }
-}
+// Home.getInitialProps = async (ctx) => {
+//   const res = await fetch('https://app.bessppl.com/events')
+//   const data = await res.json()
+//   return { data }
+// }
 
 export default Home;

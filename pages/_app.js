@@ -5,6 +5,15 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../src/theme';
 import ButtonAppBar from '../src/ButtonAppBar';
+import Amplify from 'aws-amplify';
+import config from './../aws-exports'
+Amplify.configure({
+  ...config, ssr: true
+});
+
+
+
+
 export default function MyApp(props) {
   const { Component, pageProps } = props;
 
